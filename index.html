@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Técnico | FlutterFlow y Firestore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Implementación del Autocompletado de Formularios con FlutterFlow y Firestore</h1>
+    <p>Análisis técnico, post-mortem y lecciones aprendidas</p>
+</header>
+
+<nav>
+    <a href="#contexto">Contexto</a>
+    <a href="#problema">Problema</a>
+    <a href="#acciones">Acciones</a>
+    <a href="#postmortem">Post-Mortem</a>
+    <a href="#aprendizajes">Aprendizajes</a>
+    <a href="#git">Control de Versiones</a>
+</nav>
+
+<main>
+
+<section id="contexto" class="card">
+
+<h2>Contexto</h2>
+
+<p>
+Durante el desarrollo de una aplicación móvil utilizando FlutterFlow y Firestore surgió la necesidad de optimizar el proceso de registro de usuarios. La aplicación almacenaba previamente la información de los usuarios en una colección de Firestore para posteriormente completar el registro definitivo.
+</p>
+
+<p>
+El objetivo era mejorar la experiencia del usuario evitando que tuviera que escribir nuevamente información que ya existía en la base de datos.
+</p>
+
+</section>
+
+<section id="problema" class="card">
+
+<h2>Problema</h2>
+
+<p>
+El formulario solicitaba nuevamente datos que ya habían sido registrados durante el prerregistro, ocasionando duplicidad de información, errores de digitación y una experiencia de usuario poco eficiente.
+</p>
+
+<p>
+El desafío consistía en recuperar automáticamente la información utilizando un código único almacenado en Firestore.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Objetivo</h2>
+
+<p>
+Diseñar un flujo que permitiera consultar Firestore mediante un código único y completar automáticamente el formulario dentro de FlutterFlow, reduciendo tiempos y mejorando la calidad de los datos.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Línea de tiempo</h2>
+
+<ul>
+
+<li>Análisis del problema.</li>
+
+<li>Diseño del flujo de búsqueda.</li>
+
+<li>Configuración de la consulta en Firestore.</li>
+
+<li>Asignación automática de datos al formulario.</li>
+
+<li>Pruebas con códigos válidos e inválidos.</li>
+
+<li>Corrección de errores encontrados.</li>
+
+<li>Implementación final.</li>
+
+</ul>
+
+</section>
+
+<section id="acciones" class="card">
+
+<h2>Acciones realizadas</h2>
+
+<ul>
+
+<li>Revisión de la estructura de la colección <strong>user</strong>.</li>
+
+<li>Creación de una consulta filtrada por código.</li>
+
+<li>Validación de documentos existentes.</li>
+
+<li>Asignación automática de la información.</li>
+
+<li>Pruebas funcionales.</li>
+
+<li>Mejora de mensajes de error.</li>
+
+</ul>
+
+</section>
+
+<section id="postmortem" class="card">
+
+<h2>Post-Mortem</h2>
+
+<h3>Qué salió bien</h3>
+
+<p>
+La consulta redujo significativamente el tiempo necesario para completar el registro y mejoró la experiencia del usuario.
+</p>
+
+<h3>Qué salió mal</h3>
+
+<p>
+Inicialmente no se contempló la validación de códigos inexistentes, lo que ocasionaba errores en el formulario.
+</p>
+
+<h3>Qué haría diferente</h3>
+
+<p>
+Desde el inicio implementaría validaciones más robustas, componentes reutilizables y una mejor documentación del flujo.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Causa raíz</h2>
+
+<p>
+El problema surgía porque el flujo inicial del proyecto fue diseñado sin considerar la reutilización de la información ya almacenada en Firestore. Esto generó duplicidad de datos y aumentó el riesgo de errores durante el registro.
+</p>
+
+</section>
+
+<section id="aprendizajes" class="card">
+
+<h2>Lecciones aprendidas</h2>
+
+<ul>
+
+<li>Planificar mejor los flujos desde el inicio.</li>
+
+<li>Documentar las decisiones técnicas.</li>
+
+<li>Validar escenarios excepcionales.</li>
+
+<li>Priorizar la experiencia del usuario.</li>
+
+<li>Construir componentes reutilizables.</li>
+
+</ul>
+
+</section>
+
+<section id="git" class="card">
+
+<h2>Control de Versiones</h2>
+
+<p>
+Todo el proceso fue gestionado mediante Git y GitHub utilizando commits descriptivos para mantener la trazabilidad de cada cambio realizado.
+</p>
+
+<p>
+Repositorio:
+<br>
+<a href="https://github.com/robedelosreyesm/blog-tecnico" target="_blank">
+https://github.com/robedelosreyesm/blog-tecnico
+</a>
+
+</p>
+
+<p>
+
+Ejemplos de commits:
+
+</p>
+
+<ul>
+
+<li>Inicialización del proyecto.</li>
+
+<li>Creación del blog técnico.</li>
+
+<li>Documentación del análisis post-mortem.</li>
+
+<li>Publicación en GitHub Pages.</li>
+
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>Feedback Radicalmente Sincero</h2>
+
+<p>
+Durante el desarrollo recibí comentarios sobre la necesidad de estructurar mejor la documentación y hacerla más accesible para personas sin conocimientos técnicos avanzados. En lugar de limitarme a corregir errores puntuales, reorganicé el contenido, añadí una línea de tiempo, un análisis de causa raíz y un post-mortem más completo. Esta experiencia me permitió comprender que recibir retroalimentación con una actitud abierta fortalece tanto la calidad del trabajo como el crecimiento profesional.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Conclusión</h2>
+
+<p>
+Este proyecto me permitió fortalecer mis conocimientos en FlutterFlow, Firestore y Git, además de mejorar mis habilidades para documentar procesos técnicos de forma clara y estructurada. La experiencia confirmó la importancia de la planificación, la comunicación y la mejora continua en el desarrollo de software.
+</p>
+
+</section>
+
+</main>
+</body>
+<footer>
+
+<p>Blog Técnico - Diplomatura Desarrollo Web | 2026</p>
+
+</footer>
+</html>
