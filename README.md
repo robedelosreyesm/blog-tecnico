@@ -76,8 +76,7 @@ Además, confirmó que pequeñas automatizaciones pueden generar mejoras signifi
 
 ## Evidencia de Control de Versiones
 
-Repositorio:
-https://github.com/TU-USUARIO/TU-REPOSITORIO
+Repositorio: https://github.com/robedelosreyesm/blog-tecnico.git
 
 Commits relevantes:
 
